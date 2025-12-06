@@ -1,6 +1,9 @@
 # to-solve-the-problem-of-black-webpage
 ！本教程适用于由 github pages 部署的网页
+
 ！项目类型 ：Vite+React
+
+虽然过程看上去繁琐，但是一步步做下来 100% 成功，本人已亲自验证，按以下操作执行后网页能正常显示。
 
 一、问题本质（一句话）
 
@@ -36,7 +39,8 @@ ls
 # 应该看到 package.json vite.config.js src index.html ...
 
 四：安装依赖 & 构建（生成 dist）
-npm install    # 或 yarn
+直接在终端运行
+npm install
 npm run build
 
 
@@ -45,9 +49,9 @@ npm run build
 dist/index.html
 dist/assets/...
 ✓ built in ...
+另一种检查构建成功的方法：在本地项目文件夹中查看是否多了一个名为 dist 的文件
 
-
-如果没有 dist： 报错信息复制并贴出来（常见是依赖未安装、node 版本问题、或不在项目根目录）。
+如果没有 dist： 报错信息复制并粘贴给AI（常见是依赖未安装、node 版本问题、或不在项目根目录）。
 
 五：确保 Vite 的 base 配置正确（关键点）
 
@@ -65,9 +69,9 @@ export default defineConfig({
 六：部署到 GitHub Pages（两种稳定方法）
 方法 A（推荐，自动化）：使用 GitHub Actions（deploy workflow）
 
-在仓库根创建：.github/workflows/deploy.yml
+在仓库根创建新文件：.github/workflows/deploy.yml
 
-把下面内容粘贴进去（已验证可用）：
+把下面内容粘贴进去（已验证100%可用）：
 
 name: Deploy Vite to GitHub Pages
 
