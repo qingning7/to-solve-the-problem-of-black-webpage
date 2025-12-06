@@ -131,12 +131,14 @@ git push
 
 把 dist 内容放到 docs（main 分支）
 
+```
 rm -rf docs
 mkdir docs
 cp -r dist/* docs/
 git add docs
 git commit -m "deploy: copy dist to docs"
 git push
+```
 
 
 然后在仓库 Settings → Pages → Branch: main, Folder: /docs → Save。
