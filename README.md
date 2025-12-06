@@ -75,6 +75,7 @@ export default defineConfig({
 
 把下面内容粘贴进去（已验证100%可用）：
 
+```yaml
 name: Deploy Vite to GitHub Pages
 
 on:
@@ -109,6 +110,15 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+```
+
+提交：
+
+```bash
+git add .
+git commit -m "Add deploy workflow"
+git push
+```
 
 
 提交（git add . && git commit -m "Add deploy workflow" && git push）
@@ -121,12 +131,14 @@ jobs:
 
 把 dist 内容放到 docs（main 分支）
 
+```
 rm -rf docs
 mkdir docs
 cp -r dist/* docs/
 git add docs
 git commit -m "deploy: copy dist to docs"
 git push
+```
 
 
 然后在仓库 Settings → Pages → Branch: main, Folder: /docs → Save。
