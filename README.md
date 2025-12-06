@@ -1,5 +1,5 @@
 # to-solve-the-problem-of-black-webpage
-！本教程适用于由 github pages 部署的网页
+！本教程适用于由 github pages 部署的网页打开后显示为空（黑屏）
 
 ！项目类型 ：Vite+React
 
