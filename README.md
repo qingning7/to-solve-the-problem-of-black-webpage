@@ -1,5 +1,7 @@
 # to-solve-the-problem-of-black-webpage
 
+[View Chinese Version / 中文版](#chinese-version)
+
 This guide provides a solution for GitHub Pages displaying a blank screen (white or black) after deploying a Vite + React project.
 
 While the process may seem detailed, following these steps ensures a 100% success rate for correct deployment and resource loading.
@@ -103,6 +105,8 @@ git push
 ```
 
 4.Go to GitHub → Actions to monitor the progress. Once finished, go to Settings → Pages. Ensure the Build and deployment > Source is set to "GitHub Actions". Congratulations, you are ought to visit your website successfully.
+
+<a name="chinese-version"></a>
 
 # 中文版
 
