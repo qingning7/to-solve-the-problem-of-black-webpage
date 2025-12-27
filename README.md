@@ -8,11 +8,11 @@ While the process may seem detailed, following these steps ensures a 100% succes
 
 Troubleshooting Guide: Vite + React Deployment to GitHub Pages (Blank Screen Fix)
 
-I. The Core Issue
+## I. The Core Issue
 
 GitHub Pages hosts static files (HTML/CSS/JS). A Vite+React project contains source code that must be compiled via npm run build into a dist/ folder. If you deploy the source code directly or fail to configure the base path, the browser cannot find the assets, resulting in a blank screen.
 
-II. Preparation: Clone the Repository
+## II. Preparation: Clone the Repository
 
 Option 1: GitHub Desktop File → Clone repository → Select your repository → Clone.
 
@@ -27,12 +27,12 @@ cd REO_NAME
 
 Confirm you are in the root directory (you should see package.json, vite.config.js, src/, and index.html).
 
-III. Open Terminal in Project Root
+## III. Open Terminal in Project Root
 
 - VS Code: File → Open Folder → Press Ctrl + ~ to open the terminal.
 - Terminal/PowerShell: Navigate to the folder and run ls to ensure you see the project files.
 
-IV. Install Dependencies & Build
+## IV. Install Dependencies & Build
 
 ```
 npm install
@@ -41,7 +41,7 @@ npm run build
 
 Upon success, a dist/ folder will be created containing index.html and an assets/ folder.
 
-V. Set the Correct Base Path (CRITICAL)
+## V. Set the Correct Base Path (CRITICAL)
 
 Open vite.config.js (or vite.config.ts) and add the base property:
 
@@ -54,7 +54,7 @@ export default defineConfig({
 
 Why? Without this, the HTML will look for assets at the root domain (e.g., user.github.io/assets/...) instead of your project folder (e.g., user.github.io/repo/assets/...), leading to 404 errors.
 
-VI. Deployment (using guthub actions)
+## VI. Deployment (using guthub actions)
 
 1.Create a file at: .github/workflows/deploy.yml
 2.Paste the following configuration:
@@ -116,11 +116,11 @@ git push
 
 虽然过程看上去繁琐，但是一步步做下来 100% 成功，本人已亲自验证，按以下操作执行后网页能正常显示。
 
-一、问题本质（一句话）
+## 一、问题本质
 
 GitHub Pages 托管的是已打包的静态文件（HTML/CSS/JS），而 Vite+React 项目通常是源码（需要先 npm run build 生成 dist/）。如果把源码直接部署或资源路径错误（base 未设置）就会出现白屏/黑屏。
 
-二：准备（把仓库拉到本地）
+## 二：准备（把仓库拉到本地）
 
 方法 1（图形界面）：使用 GitHub Desktop
 
@@ -138,7 +138,7 @@ cd 仓库名
 
 确认你在项目根目录：能看到 package.json、vite.config.js（或 vite.config.ts）、src/、index.html。
 
-三：打开终端（进入项目根目录）
+## 三：打开终端（进入项目根目录）
 
 VS Code：File → Open Folder → `Ctrl + `` 打开内置终端
 
@@ -154,7 +154,7 @@ ls
 
 应该看到 package.json vite.config.js src index.html ...
 
-四：安装依赖 & 构建（生成 dist）
+## 四：安装依赖（生成 dist）
 直接在终端运行
 ```
 npm install
@@ -174,7 +174,7 @@ dist/assets/...
 
 如果没有 dist： 报错信息复制并粘贴给AI（常见是依赖未安装、node 版本问题、或不在项目根目录）。
 
-五：确保 Vite 的 base 配置正确（重要！！！）
+## 五：确保 Vite 的 base 配置正确（重要！！！）
 
 在 vite.config.js（或 vite.config.ts）中：
 
@@ -189,7 +189,7 @@ export default defineConfig({
 
 说明：base 要以 /repo-name/（包含前后斜杠）形式指定，否则构建后的静态资源引用路径会指向错误位置导致 404 → 白屏。
 
-六：部署到 GitHub Pages：使用 GitHub Actions（deploy workflow）
+## 六：部署到 GitHub Pages：使用 GitHub Actions（deploy workflow）
 
 在仓库根创建新文件：.github/workflows/deploy.yml
 
