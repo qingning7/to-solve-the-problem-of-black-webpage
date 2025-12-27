@@ -1,4 +1,4 @@
-# to-solve-the-problem-of-black-webpage
+# Solution of repairing a blank webpage deployed by github
 
 [View Chinese Version / 中文版](#chinese-version)
 
